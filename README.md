@@ -2,12 +2,6 @@
 
 This is a simple To-do list Node.js application. There are many like it already. It's meant to be a template for new projects, but should also demonstrate how to structure a loosely coupled Node.js application.
 
-### Installation
-
-```sh
-npm install node-app-scaffold
-```
-
 ### Directory Structure
 
 ```
