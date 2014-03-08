@@ -58,14 +58,14 @@ grunt
 # Watch for changes using livereload
 grunt watch
 
+# Run the Jasmine unit test suite
+npm test
+
 # Start the development server
 npm start
 
-# Start the server in production environment
+# Start the production server
 NODE_ENV=production npm start
-
-# Run the Jasmine unit test suite
-npm test
 
 # Run the CasperJS integration test suite
 NODE_ENV=test npm start
