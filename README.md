@@ -52,7 +52,7 @@ README.md
 ### Commands
 
 ```sh
-# Build the files
+# Lint, process and build the site assets
 grunt
 
 # Watch for changes using livereload
