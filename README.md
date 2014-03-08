@@ -49,32 +49,32 @@ package.json
 README.md
 ```
 
-### Running the server
+### Commands
 
 ```sh
-# In Terminal window #1, start redis if it's not already running:
-redis-server
+# Build the files
+grunt
 
-# In Terminal window #2:
+# Watch for changes using livereload
+grunt watch
+
+# Start the development server
 npm start
-```
 
-### Running the Jasmine tests
+# Start the server in production environment
+NODE_ENV=production npm start
 
-```sh
+# Run the Jasmine unit test suite
 npm test
-```
 
-### Running the CasperJS integration tests
-
-```sh
+# Run the CasperJS integration test suite
 NODE_ENV=test npm start
 grunt integration
 ```
 
 ### Design Notes
 
-In this example, templates are compiled on the server but rendered on the client. Bower is being used for packages that are client-side only (e.g. jQuery, Font Awesome), and npm for packages shared by both server and client (e.g. Lodash).
+In this example, templates are compiled on the server but rendered on the client. Bower is used for packages that are client-side only (e.g. jQuery, Font Awesome), and npm for packages shared by both server and client (e.g. Lodash).
 
 ### License
 
