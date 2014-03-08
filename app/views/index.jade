@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title To-Do List
+    if environment !== 'test'
+      link(href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+    link(href='/bower/font-awesome/css/font-awesome.min.css?' + timestamp, rel='stylesheet', type='text/css')
+    link(href='/bundled/app.css?' + timestamp, rel='stylesheet', type='text/css')
+    script(src='/bundled/lib.js?' + timestamp)
+    script(src='/bundled/templates.js?' + timestamp)
+    script(src='/bundled/app.js?' + timestamp)
+    if environment === 'development'
+      script(src='//localhost:35729/livereload.js')
+
+  body
+    #content

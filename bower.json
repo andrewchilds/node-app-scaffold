@@ -1,0 +1,14 @@
+{
+  "name": "node-app-scaffold",
+  "version": "0.1.0",
+  "main": "app/server/app.js",
+  "license": "MIT",
+  "dependencies": {
+    "fastbinder": "0.2.0",
+    "collectionize": "0.2.0",
+    "font-awesome": "4.0.3",
+    "jquery": "1.11.0",
+    "less-elements": "*",
+    "normalize-css": "3.0.0"
+  }
+}

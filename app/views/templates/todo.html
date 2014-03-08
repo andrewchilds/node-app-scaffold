@@ -1,0 +1,7 @@
+<div class="todo {{? d.done }}done{{/}}" data-on-change="update">
+  <input type="hidden" name="id" value="{{d.id}}" />
+  <input type="hidden" name="done" value="{{d.done}}" />
+  <div class="todo-checkbox" data-on-click="toggleState"><span class="fa {{? d.done }}fa-check-square{{- else }}fa-square-o{{/}}"></span></div>
+  <div class="todo-text"><input type="text" name="text" value="{{d.text}}" /></div>
+  <div class="todo-actions"><a href="#" class="action delete-todo" data-on-click="delete"><span class="fa fa-trash-o"></span></a></div>
+</div>

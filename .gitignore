@@ -1,0 +1,10 @@
+node_modules
+public/bower
+public/bundled
+test/log/*.png
+test/log/*.html
+.DS_Store
+.idea
+fingerprint
+npm-debug.log
+libpeerconnection.log

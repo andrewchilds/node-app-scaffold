@@ -1,0 +1,11 @@
+{
+  "PORT": 4000,
+  "MYSQL_HOSTNAME": "127.0.0.1",
+  "MYSQL_PORT": 3306,
+  "MYSQL_DBNAME": "myappname_test",
+  "MYSQL_USERNAME": "root",
+  "MYSQL_PASSWORD": "",
+  "REDIS_HOSTNAME": "127.0.0.1",
+  "REDIS_PORT": 6379,
+  "REDIS_PASSWORD": ""
+}
