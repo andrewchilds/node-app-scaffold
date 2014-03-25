@@ -1,47 +1,47 @@
-App.namespace('Model.Todo', function () {
+App.module('Model.Todo', function (exports) {
 
-  var pub = Collectionize('TodoList');
+  exports = Collectionize('TodoList');
 
-  pub.handleResponse = function (todoList) {
-    pub.flush(todoList);
-    App.Render.todoList();
+  exports.handleResponse = function (todoList) {
+    exports.flush(todoList);
+    App.Controller.Todo.render();
   };
 
-  pub.load = function () {
+  exports.load = function () {
     App.Ajax.get({
       url: '/todos',
-      success: pub.handleResponse
+      success: exports.handleResponse
     });
   };
 
-  pub.on('beforeAdd', function (todo) {
-    todo.id = (_.max(pub.db, 'id').id || 0) + 1;
+  exports.on('beforeAdd', function (todo) {
+    todo.id = (_.max(exports.db, 'id').id || 0) + 1;
     todo.done = '';
   });
 
-  pub.on('added', function (todo) {
+  exports.on('added', function (todo) {
     App.Ajax.post({
       url: '/todo',
       data: { json: JSON.stringify(todo) },
-      success: pub.handleResponse
+      success: exports.handleResponse
     });
   });
 
-  pub.on('updated', function (todo) {
+  exports.on('updated', function (todo) {
     App.Ajax.put({
       url: '/todo/' + todo.id,
       data: { json: JSON.stringify(todo) },
-      success: pub.handleResponse
+      success: exports.handleResponse
     });
   });
 
-  pub.on('deleted', function (todo) {
+  exports.on('deleted', function (todo) {
     App.Ajax.delete({
       url: '/todo/' + todo.id,
-      success: pub.handleResponse
+      success: exports.handleResponse
     });
   });
 
-  return pub;
+  return exports;
 
 });

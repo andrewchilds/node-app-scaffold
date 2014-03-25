@@ -1,8 +1,14 @@
-App.namespace('Controller.Todo', function () {
+App.module('Controller.Todo', function (exports) {
 
-  var pub = {};
+  exports.render = function () {
+    var html = Caveman.render('todoList', { todoList: App.Model.Todo.db });
 
-  pub.new = function () {
+    if (document.getElementById('todoList').innerHTML !== html) {
+      document.getElementById('todoList').innerHTML = html;
+    }
+  };
+
+  exports.new = function () {
     var text = $('input', this).val();
     if (!text) {
       return false;
@@ -13,7 +19,7 @@ App.namespace('Controller.Todo', function () {
     return false;
   };
 
-  pub.toggleState = function () {
+  exports.toggleState = function () {
     var todo = getTodoFromContext(this);
     todo.done = todo.done === 'on' ? '' : 'on';
     App.Model.Todo.update(todo);
@@ -21,14 +27,14 @@ App.namespace('Controller.Todo', function () {
     return false;
   };
 
-  pub.update = function () {
+  exports.update = function () {
     var todo = getTodoFromContext(this);
     App.Model.Todo.update(todo);
 
     return false;
   };
 
-  pub.delete = function () {
+  exports.delete = function () {
     var todo = getTodoFromContext(this);
     App.Model.Todo.remove({ id: todo.id });
 
@@ -40,7 +46,5 @@ App.namespace('Controller.Todo', function () {
     element.addClass('updating');
     return App.Utils.formData(element);
   }
-
-  return pub;
 
 });

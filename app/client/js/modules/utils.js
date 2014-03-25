@@ -1,21 +1,19 @@
-App.namespace('Utils', function () {
+App.module('Utils', function (exports) {
 
-  var pub = {};
-
-  pub.formData = function (el) {
+  exports.formData = function (el) {
     var data = {};
     $('input, select, textarea', el).each(function () {
-      data[pub.attr(this, 'name')] = pub.convertNumber($(this).val());
+      data[exports.attr(this, 'name')] = exports.convertNumber($(this).val());
     });
     return data;
   };
 
   // Much faster than jQuery.data
-  pub.data = function (el, name, val) {
-    return pub.attr(el, 'data-' + name, val);
+  exports.data = function (el, name, val) {
+    return exports.attr(el, 'data-' + name, val);
   };
 
-  pub.attr = function (el, name, val) {
+  exports.attr = function (el, name, val) {
     if (el && el.jquery) {
       el = el[0];
     }
@@ -25,15 +23,13 @@ App.namespace('Utils', function () {
         el.setAttribute(name, val);
       } else {
         var attr = el.getAttribute(name);
-        return pub.convertNumber(attr);
+        return exports.convertNumber(attr);
       }
     }
   };
 
-  pub.convertNumber = function (str) {
+  exports.convertNumber = function (str) {
     return (str === '' || isNaN(str)) ? str : parseFloat(str);
   };
-
-  return pub;
 
 });

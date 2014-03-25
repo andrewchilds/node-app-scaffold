@@ -1,20 +1,8 @@
-App.namespace('Render', function () {
+App.module('Render', function (exports) {
 
-  var pub = {};
-
-  pub.layout = function () {
+  exports.layout = function () {
     var html = Caveman.render('layout');
     document.getElementById('content').innerHTML = html;
   };
-
-  pub.todoList = function () {
-    var html = Caveman.render('todoList', { todoList: App.Model.Todo.db });
-
-    if (document.getElementById('todoList').innerHTML !== html) {
-      document.getElementById('todoList').innerHTML = html;
-    }
-  };
-
-  return pub;
 
 });

@@ -1,12 +1,12 @@
-App.namespace('Ajax', function () {
+App.module('Ajax', function (exports) {
 
-  var pub = { active: 0 };
+  exports.active = 0;
 
-  pub.ajax = function (options) {
+  exports.ajax = function (options) {
     var complete = options.complete;
-    pub.active++;
+    exports.active++;
     options.complete = function () {
-      pub.active--;
+      exports.active--;
       if (complete) {
         complete.apply(this, arguments);
       }
@@ -15,12 +15,10 @@ App.namespace('Ajax', function () {
   };
 
   _.each(['get', 'post', 'put', 'delete'], function (name) {
-    pub[name] = function (options) {
+    exports[name] = function (options) {
       options.type = name.toUpperCase();
-      pub.ajax(options);
+      exports.ajax(options);
     };
   });
-
-  return pub;
 
 });

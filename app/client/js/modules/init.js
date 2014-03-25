@@ -1,20 +1,17 @@
-App.namespace('Init', function () {
+App.module('Init', function (exports) {
 
-  var pub = {};
+  exports.firstRun = true;
 
-  pub.firstRun = true;
-
-  pub.init = function () {
-    if (pub.firstRun) {
+  exports.init = function () {
+    if (exports.firstRun) {
       $.fastbinder();
-      App.Render.layout();
-      App.Model.Todo.load();
-      pub.firstRun = false;
+      exports.firstRun = false;
     }
+
+    App.Render.layout();
+    App.Model.Todo.load();
   };
 
-  return pub;
+  $(exports.init);
 
 });
-
-$(App.Init.init);
