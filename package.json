@@ -1,7 +1,7 @@
 {
   "name": "node-app-scaffold",
   "description": "Scaffolding for a Node application using Express, Caveman, LESS, jQuery, Jasmine and CasperJS.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": "https://github.com/andrewchilds/node-app-scaffold.git",
   "author": {
     "name": "Andrew Childs",

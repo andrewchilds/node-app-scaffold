@@ -1,6 +1,6 @@
 {
   "name": "node-app-scaffold",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "app/server/app.js",
   "license": "MIT",
   "dependencies": {
